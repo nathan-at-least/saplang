@@ -1,6 +1,6 @@
 use sappho_unparse::{Stream, Unparse};
 
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct LetClause<Pattern, Expr> {
     /// The binding pattern, ie: the first `x` in `let x = 42; f x`.
     pub binding: Pattern,

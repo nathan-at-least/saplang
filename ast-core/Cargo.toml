@@ -7,7 +7,6 @@ homepage.workspace = true
 
 [dependencies]
 derive_more.workspace = true
-derive-new.workspace = true
 sappho-identmap.workspace = true
 sappho-object.workspace = true
 sappho-unparse.workspace = true

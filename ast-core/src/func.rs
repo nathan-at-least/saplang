@@ -1,7 +1,7 @@
 use sappho_unparse::{Stream, Unparse};
 
 /// A function definition expression, ie `fn x -> x`.
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct FuncDef<Pattern, PureExpr> {
     /// The binding pattern, ie the initial `x` in `fn x -> x`.
     pub binding: Pattern,

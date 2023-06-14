@@ -1,7 +1,7 @@
 use sappho_unparse::{Stream, Unparse};
 
 /// Function application, ie `f x`.
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct ApplicationExpr<Expr> {
     /// The target of application, ie `f` in `f x`.
     pub target: Box<Expr>,

@@ -3,7 +3,7 @@ use sappho_ast_core::{EffectExpr, ProcEffects};
 use sappho_ast_reduced::{ObjectDef, ProcClause, ProcExpr};
 use sappho_unparse::{Stream, Unparse};
 
-#[derive(Debug, derive_new::new)]
+#[derive(Debug, derive_more::Constructor)]
 pub struct Proc {
     pdef: ProcClause,
     defscope: ScopeRef,

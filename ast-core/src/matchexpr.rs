@@ -5,7 +5,7 @@ use sappho_unparse::{Stream, Unparse};
 pub use self::clause::MatchClause;
 
 /// A `match` expression, ie: `match x { 3 -> 0, y -> y }`.
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct MatchExpr<Pattern, Expr> {
     /// The match target, ie: `x` in `match x { 3 -> 0, y -> y }`.
     pub target: Box<Expr>,
