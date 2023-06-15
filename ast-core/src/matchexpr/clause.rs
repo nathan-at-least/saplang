@@ -1,7 +1,7 @@
 use sappho_unparse::{Stream, Unparse};
 
 /// A `match` clause, ie `3 -> 0` and `y -> y` in `match x { 3 -> 0, y -> y }`.
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct MatchClause<Pattern, Expr> {
     /// The binding pattern, ie `3` in `3 -> 0` and the first `y` in `y -> y`.
     pub pattern: Pattern,

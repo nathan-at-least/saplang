@@ -6,6 +6,6 @@ license.workspace = true
 homepage.workspace = true
 
 [dependencies]
-derive-new.workspace = true
+derive_more.workspace = true
 sappho-identmap.workspace = true
 sappho-unparse.workspace = true

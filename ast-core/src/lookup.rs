@@ -2,7 +2,7 @@ use crate::Identifier;
 use sappho_unparse::{Stream, Unparse};
 
 /// An attribute lookup expression, ie: `x.foo`.
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct LookupExpr<Expr> {
     /// The target expression of the lookup, ie `x` in `x.foo`.
     pub target: Box<Expr>,

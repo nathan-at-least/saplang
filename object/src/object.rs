@@ -1,9 +1,8 @@
 use crate::{Element, IntoIter, Unbundled};
-use derive_new::new;
 use sappho_identmap::{IdentMap, TryIntoIdentMap};
 use sappho_unparse::{Stream, Unparse};
 
-#[derive(Clone, Debug, PartialEq, new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct Object<F, Q, P, A> {
     f: Option<F>,
     q: Option<Q>,

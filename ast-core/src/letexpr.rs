@@ -5,7 +5,7 @@ use sappho_unparse::{Stream, Unparse};
 pub use self::clause::LetClause;
 
 /// A `let` expression for local definitions, ie: `let x = 42; f x`.
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct LetExpr<Pattern, Expr> {
     /// The let clauses:
     pub clauses: Vec<LetClause<Pattern, Expr>>,

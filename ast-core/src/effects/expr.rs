@@ -1,6 +1,6 @@
 use sappho_unparse::{Stream, Unparse};
 
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct EffectExpr<FX, Expr> {
     pub effect: FX,
     pub expr: Box<Expr>,

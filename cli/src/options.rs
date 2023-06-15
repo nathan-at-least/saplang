@@ -1,11 +1,10 @@
 mod runcmd;
 
 use crate::{Result, SourceOption};
-use clap::{ArgEnum, Parser, Subcommand};
+use clap::{Parser, Subcommand, ValueEnum};
 
 /// sappho interpreter
 #[derive(Debug, Parser)]
-#[clap()]
 pub struct Options {
     /// Turn on trace output
     #[clap(short, long)]
@@ -29,20 +28,16 @@ impl Options {
 
 /// subcommands
 #[derive(Debug, Subcommand)]
-#[clap()]
 pub enum Command {
     /// Eval an input
-    #[clap()]
     Eval(SourceOptions),
 
     /// Parse an input
-    #[clap()]
     Parse(ParseOptions),
 }
 
 /// source options
 #[derive(Debug, Parser)]
-#[clap()]
 pub struct SourceOptions {
     #[clap(default_value_t)]
     source: SourceOption,
@@ -50,10 +45,9 @@ pub struct SourceOptions {
 
 /// parse options
 #[derive(Debug, Parser)]
-#[clap()]
 pub struct ParseOptions {
     /// Select the parse output format
-    #[clap(arg_enum, long, short, default_value = "canonical")]
+    #[clap(long, short, value_enum, default_value_t)]
     format: ParseFormat,
 
     #[clap(flatten)]
@@ -61,8 +55,7 @@ pub struct ParseOptions {
 }
 
 /// parse output formats
-#[derive(ArgEnum, Clone, Debug)]
-#[clap()]
+#[derive(Clone, Debug, Default, ValueEnum)]
 pub enum ParseFormat {
     /// The internal AST representation
     AST,
@@ -71,6 +64,7 @@ pub enum ParseFormat {
     Direct,
 
     /// The canonicalized source code
+    #[default]
     Canonical,
 
     /// The reduced source code

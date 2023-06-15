@@ -1,7 +1,7 @@
 use sappho_unparse::{Stream, Unparse};
 
 /// A query definition, ie `query $x`.
-#[derive(Clone, Debug, PartialEq, derive_new::new)]
+#[derive(Clone, Debug, PartialEq, derive_more::Constructor)]
 pub struct QueryDef<QueryExpr> {
     /// The `QueryExpr` definition, ie the `$x` in `query $x`.
     pub body: Box<QueryExpr>,
