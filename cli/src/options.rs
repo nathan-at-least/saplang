@@ -53,7 +53,7 @@ pub struct SourceOptions {
 #[clap()]
 pub struct ParseOptions {
     /// Select the parse output format
-    #[clap(long, short, value_enum, default_value = "canonical")]
+    #[clap(long, short, value_enum, default_value_t)]
     format: ParseFormat,
 
     #[clap(flatten)]
@@ -61,8 +61,7 @@ pub struct ParseOptions {
 }
 
 /// parse output formats
-#[derive(Clone, Debug, ValueEnum)]
-#[clap()]
+#[derive(Clone, Debug, Default, ValueEnum)]
 pub enum ParseFormat {
     /// The internal AST representation
     AST,
@@ -71,6 +70,7 @@ pub enum ParseFormat {
     Direct,
 
     /// The canonicalized source code
+    #[default]
     Canonical,
 
     /// The reduced source code
