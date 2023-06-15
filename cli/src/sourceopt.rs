@@ -3,7 +3,7 @@ use std::fmt;
 use std::path::PathBuf;
 use std::str::FromStr;
 
-#[derive(Debug, Default)]
+#[derive(Clone, Debug, Default)]
 pub enum SourceOption {
     #[default]
     Stdin,

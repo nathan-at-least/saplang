@@ -27,7 +27,7 @@ homepage = "https://github.com/nathan-at-least/sappho"
 anyhow = "1.0.71"
 anyhow-std = "0.1.4"
 chumsky = "0.8"
-clap = { version = "3.1.18", features = [ "derive", "cargo" ] }
+clap = { version = "4.3.4", features = [ "derive", "cargo" ] }
 derive_more = "0.99.17"
 include_dir = "0.7"
 indoc = "1.0.6"

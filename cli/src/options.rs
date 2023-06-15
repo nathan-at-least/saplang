@@ -1,7 +1,7 @@
 mod runcmd;
 
 use crate::{Result, SourceOption};
-use clap::{ArgEnum, Parser, Subcommand};
+use clap::{Parser, Subcommand, ValueEnum};
 
 /// sappho interpreter
 #[derive(Debug, Parser)]
@@ -53,7 +53,7 @@ pub struct SourceOptions {
 #[clap()]
 pub struct ParseOptions {
     /// Select the parse output format
-    #[clap(arg_enum, long, short, default_value = "canonical")]
+    #[clap(long, short, value_enum, default_value = "canonical")]
     format: ParseFormat,
 
     #[clap(flatten)]
@@ -61,7 +61,7 @@ pub struct ParseOptions {
 }
 
 /// parse output formats
-#[derive(ArgEnum, Clone, Debug)]
+#[derive(Clone, Debug, ValueEnum)]
 #[clap()]
 pub enum ParseFormat {
     /// The internal AST representation
