@@ -5,7 +5,6 @@ use clap::{Parser, Subcommand, ValueEnum};
 
 /// sappho interpreter
 #[derive(Debug, Parser)]
-#[clap()]
 pub struct Options {
     /// Turn on trace output
     #[clap(short, long)]
@@ -29,20 +28,16 @@ impl Options {
 
 /// subcommands
 #[derive(Debug, Subcommand)]
-#[clap()]
 pub enum Command {
     /// Eval an input
-    #[clap()]
     Eval(SourceOptions),
 
     /// Parse an input
-    #[clap()]
     Parse(ParseOptions),
 }
 
 /// source options
 #[derive(Debug, Parser)]
-#[clap()]
 pub struct SourceOptions {
     #[clap(default_value_t)]
     source: SourceOption,
@@ -50,7 +45,6 @@ pub struct SourceOptions {
 
 /// parse options
 #[derive(Debug, Parser)]
-#[clap()]
 pub struct ParseOptions {
     /// Select the parse output format
     #[clap(long, short, value_enum, default_value_t)]
