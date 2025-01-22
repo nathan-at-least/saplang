@@ -11,7 +11,7 @@ pub struct Stream {
 #[derive(Debug)]
 enum Item {
     Leaf(String),
-    Break(Break),
+    Break,
     Substream(Stream),
 }
 use Item::*;
@@ -78,7 +78,7 @@ impl Stream {
         self.items.push(Leaf(s))
     }
 
-    pub(crate) fn add_break(&mut self, brk: Break) {
-        self.items.push(Break(brk));
+    pub(crate) fn add_break(&mut self) {
+        self.items.push(Break);
     }
 }

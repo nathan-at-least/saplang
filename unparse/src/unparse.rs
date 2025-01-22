@@ -24,7 +24,7 @@ impl Unparse for String {
 
 impl Unparse for Break {
     fn unparse_into(&self, s: &mut Stream) {
-        s.add_break(*self)
+        s.add_break()
     }
 }
 

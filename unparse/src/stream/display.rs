@@ -18,7 +18,7 @@ fn fmt_stream(stream: &Stream, f: &mut fmt::Formatter) -> fmt::Result {
 fn fmt_item(item: &Item, f: &mut fmt::Formatter, depth: usize) -> fmt::Result {
     match item {
         Leaf(s) => f.write_str(s),
-        Break(_) => {
+        Break => {
             f.write_str("\n")?;
             for _ in 0..depth {
                 f.write_str("  ")?;
